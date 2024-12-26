@@ -7,7 +7,7 @@ import path from 'path';
 export default defineConfig({
   server:{
     proxy:{
-      '/api':"https://chat8-3.onrender.com",
+      '/api':"http://localhost:3000",
     },
   },
   plugins: [react(), tsconfigPaths()],
