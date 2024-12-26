@@ -39,7 +39,7 @@ const server = app.listen(port, () => {
 const io = new Server(server, {
     pingTimeOut: 60000,
     cors: {
-        origin: "https://chat8-3.onrender.com",
+        origin: "http://localhost:5173",
     }
 })
 
