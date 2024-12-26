@@ -17,9 +17,7 @@ import animationData from "/src/animations/animation.json"
 import { Menu } from '@chakra-ui/react'
 
 
-const ENDPOINT = process.env.NODE_ENV === 'production' 
-  ? 'https://chat8-3.onrender.com' // Use the production URL for production
-  : 'http://localhost:3000'; 
+const ENDPOINT ='https://chat8-3.onrender.com'; // Use the production URL for production
 var socket,selectedChatCompare;
 const SingleChat = ({fetchAgain,setFetchAgain }) => {
     const defaultOptions = {
