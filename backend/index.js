@@ -15,7 +15,7 @@ import path from "path"
 
 dotenv.config({})
 const app = express()
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.use(cookieParser())
 const corsOptions={
     origin: "*",
