@@ -10,12 +10,13 @@ import { errorHandler, notFound } from "./middlewares/errorMiddleware.js"
 import messageRoutes from "./Routes/messageRoutes.js"
 import { Server } from "socket.io";
 import path from "path"
+import http from "http"
 
 
 
 dotenv.config({})
 const app = express()
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 app.use(cookieParser())
 const corsOptions={
     origin: "*",
@@ -33,15 +34,16 @@ app.use(urlencoded({ extended: true }))
 
 MongoDB()
 
-const server = app.listen(port, () => {
-    console.log(`server is running on port ${port}`)
-})
+const server = http.createServer(app);
+
+// Create Socket.IO instance attached to the server
 const io = new Server(server, {
-    pingTimeOut: 60000,
-    cors: {
-        origin: "https://chat8-4.onrender.com",
-    }
-})
+  cors: {
+    origin: "https://chat8-4.onrender.com", // Frontend deployed URL
+    methods: ["GET", "POST"],
+    credentials: true
+  }
+});
 
 io.on("connection", (socket) => {
     console.log("a user connected")
@@ -97,7 +99,7 @@ else{
         res.send("API is running")
     })
 }
-
+app.listen("/",()=>{console.log(`server running at port ${port}`)})
 
 
 
