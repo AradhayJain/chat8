@@ -45,7 +45,9 @@ const SingleChat = ({fetchAgain,setFetchAgain }) => {
         setIsProfileBoxOpen(true)
     }
     useEffect(() => {
-        socket=io(ENDPOINT);
+        socket=io(ENDPOINT,{
+            transports: ["websocket", "polling"],
+        });
         socket.emit('setup',user);
         socket.on('connected', () => {
             setConnected(true);
