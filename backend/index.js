@@ -15,7 +15,7 @@ import path from "path"
 
 dotenv.config({})
 const app = express()
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 app.use(cookieParser())
 const corsOptions={
     origin: "*",
@@ -39,7 +39,7 @@ const server = app.listen(port, () => {
 const io = new Server(server, {
     pingTimeOut: 60000,
     cors: {
-        origin: "https://chat8-3.onrender.com",
+        origin: "http://localhost:5173",
     }
 })
 
