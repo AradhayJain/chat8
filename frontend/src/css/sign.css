@@ -1,0 +1,38 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.form{
+    margin-top:30px;
+    display:flex;
+    justify-content: center;
+}
+.fm{
+    width:100%;
+}
+
+input{
+    border-radius: 10px;
+    height:30px;
+    width:100%;
+    background-color: navajowhite;
+}
+.b{
+    width:100%;
+    height:40px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    background-color: aquamarine;
+}
+.pic input{
+    width:100%;
+    background-color: azure;
+}
+.pic{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+}

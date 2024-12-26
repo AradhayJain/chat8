@@ -1,0 +1,12 @@
+.heading{
+    margin: 0;
+    font-size: '24px';
+    font-weight: 'bold';
+    color: rgb(24, 24, 156);
+}
+
+@media (max-width: 768px) {
+    .heading{
+        font-size: '16px';
+    }
+}
