@@ -10,7 +10,7 @@ import { errorHandler, notFound } from "./middlewares/errorMiddleware.js"
 import messageRoutes from "./Routes/messageRoutes.js"
 import { Server } from "socket.io";
 import path from "path"
-import http from "http"
+
 
 
 
@@ -34,7 +34,7 @@ app.use(urlencoded({ extended: true }))
 
 MongoDB()
 
-const server = http.createServer(app);
+const server=app.listen("/",()=>{console.log(`server running at port ${port}`)})
 
 // Create Socket.IO instance attached to the server
 const io = new Server(server, {
